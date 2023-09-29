@@ -1,0 +1,25 @@
+<app-header></app-header>
+<ng-container *ngIf="post && editPostForm">
+    <div>
+
+        <div class="form-card">
+            
+                <h2>MODIFIER POST</h2> 
+                <form [formGroup]="editPostForm">
+                    <div class="form-group">
+                        <label for="description">Description</label> <br>
+                        <input type="text" id="description" formControlName="description">
+                    </div>
+                    <div class="form-group">
+                        <label for="imageUrl">URL de l'image</label><br>
+                        <input type="text" id="imageUrl" formControlName="imageUrl">
+                    </div>
+                    <div class="btn">
+                        <button mat-raised-button color="primary" (click)="onSubmit(post._id)"[disabled]="editPostForm.invalid" type="submit" >MODIFIER</button>
+                        
+                    </div>
+                </form>
+            
+        </div>
+    </div>
+</ng-container>

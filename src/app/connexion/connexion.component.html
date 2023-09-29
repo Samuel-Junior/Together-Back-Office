@@ -1,0 +1,28 @@
+<body class="global">
+    <div class="logo">
+        <img src="assets/images/logo-together.png" alt="logo-together" width="400px" height="300px">
+    </div>
+    <h4>Votre réseau d'entreprise, mais pas trop ;)</h4>
+
+    <div class="form">
+        <form [formGroup]="loginForm">
+            <mat-form-field class="example-full-width">
+                <mat-label>Enter your mail</mat-label>
+                <input matInput placeholder="labelle@gmail.com" formControlName="username">
+            </mat-form-field>
+            <br>
+            <mat-form-field>
+                <mat-label>Enter your password</mat-label>
+                <input matInput [type]="hide ? 'password' : 'text'" formControlName="password">
+                <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                    <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                </button>
+            </mat-form-field>
+            <div class="example-label"></div>
+            <div class="btnValide">
+              <button (click)="goToHome()" [disabled]="loginForm.invalid" mat-raised-button color="primary">Se connecter</button>
+            </div>
+          
+        </form>
+    </div>
+</body>

@@ -1,0 +1,77 @@
+<app-header></app-header>
+<div class="global">
+
+    <div class="profils">
+        <div class="test">
+
+            <h1>{{initial}}</h1>
+            <!-- <mat-form-field [color]="colorControl.value!">
+                <mat-label>Color</mat-label>
+                <mat-select [formControl]="colorControl">
+                  <mat-option value="primary">{{currentUser?.role}}</mat-option>
+                  <mat-option value="accent">{{currentUser?.departement}}</mat-option>
+                  <mat-option value="warn">{{currentUser?.nom}}</mat-option>
+                  <mat-option value="warn">{{currentUser?.prenom}}</mat-option>
+                  <mat-option value="warn">{{currentUser?.mail}}</mat-option>
+                </mat-select>
+              </mat-form-field> -->
+            <H2>{{currentUser?.role}}</H2>
+            <p>{{currentUser?.departement}}</p>
+            <p>{{currentUser?.nom}}</p>
+            <p>{{currentUser?.prenom}}</p>
+            <!-- <p>{{currentUser?.mail}}</p> -->
+        </div>
+            
+    </div>
+    <ng-container  *ngIf="postTab.length > 0">
+        <div class="cards">
+
+            <div>
+                <button (click)="trier()" mat-raised-button color="primary">{{libelle}}</button>
+            </div>
+            <ng-container  *ngFor="let post of postTab">        
+                <mat-card class="example-card">
+                    <mat-card-header>
+                        <!-- <div mat-card-avatar class="example-header-image"></div> -->
+                        <mat-card-title>{{post.author?.prenom ?? 'prenom'}} {{post.author?.nom ?? 'nom'}}</mat-card-title>
+                        <mat-card-subtitle>{{post.author?.departement | titlecase}} </mat-card-subtitle>
+                        <mat-card-subtitle>Mise en ligne le :{{post.createdPost | date:'short'}}</mat-card-subtitle>
+                    </mat-card-header>
+                    <img mat-card-image [src]="post.imageUrl" [alt]="post.description">
+                    <mat-card-content>
+                        
+                        <p *ngIf="post">
+                            {{post.description}}
+                        </p>
+                    </mat-card-content>
+                    <mat-card-actions>
+                        <button  (click)="like(post._id,post)" mat-button>{{button}} : {{post.like.length}}</button>
+                        <ng-container *ngIf="displayBtn(post)">
+                            <button (click)="goToEdit(post._id)" mat-button>EDIT</button>
+                            <button (click)="delete(post._id)" mat-button>DEL</button>
+                        </ng-container>
+                    </mat-card-actions>
+                </mat-card>
+            </ng-container>
+        </div>
+        </ng-container>
+    <div>
+        <div class="onglet">
+            <div class="lec">
+                <h2>EVENT</h2>
+                <img src="assets/images/bbq.png" alt="" width="200px">
+                <img src="assets/images/equipe.jpg" alt="" width="200px">
+                <img src="assets/images/conference.jpg" alt="" width="200px">
+            </div>
+            <div class="lec">
+                <h2>ANNONCES</h2>
+                <img src="assets/images/immo.jpg" alt="" width="200px">
+            </div>
+        </div>
+    </div>
+    <div class="example-button-container">
+        <button mat-fab color="warn" aria-label="Example icon button with a home icon" (click)="goToCreate()">
+          <mat-icon>plus_one</mat-icon>
+        </button>
+      </div>
+</div>

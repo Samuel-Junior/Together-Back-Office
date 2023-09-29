@@ -1,0 +1,39 @@
+html body{
+    height: 100%;
+}
+.global{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 7rem;
+   
+}
+.logo img{
+    position: absolute;
+    left: 15rem;
+    top: 12rem;
+}
+h4{
+    color: rgb(80,109,189);
+}
+
+.form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+    background-color: rgb(80,109,189) ;
+    padding: 25px;
+    border-radius: 15px;
+}
+  
+.example-full-width {
+    width: 100%;
+  }
+
+.btnValide{
+    display: flex;
+    justify-content: center;
+}

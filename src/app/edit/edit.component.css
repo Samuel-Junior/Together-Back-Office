@@ -1,0 +1,30 @@
+.btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+form {
+    width: 30%;
+    gap: 1rem;
+    display: flex;
+    flex-direction: column;
+    margin: 1rem;
+}
+.form-card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+}
+input{
+    width: 100%;
+}
+.form-group{
+    width: 100%;
+}
+app-footer{
+    position: fixed;
+    width: 100%;
+    bottom: 0%;
+}

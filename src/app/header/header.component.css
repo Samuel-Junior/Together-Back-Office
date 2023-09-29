@@ -1,0 +1,78 @@
+div.global{
+    display: flex;
+    justify-content: flex-start;
+    background-color: #3f51b5;
+    color: white;
+    
+}
+div.logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 8rem;
+    height: 100px;
+    width: 100px;
+}
+div.logo img{
+    height: 250px;
+    width: 300px;
+}
+
+.initial{
+ 
+  padding: 0%;
+  border-radius: 55%;
+  width: 4%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.initial h2{
+  font-size: medium;
+}
+
+section {
+    display: table;
+  }
+  
+  .example-label {
+    display: table-cell;
+    font-size: 14px;
+    margin-left: 8px;
+    min-width: 120px;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-right: 4rem;
+    
+    ;
+  }
+  
+  .example-button-row {
+    display: table-cell;
+    max-width: 600px;
+  }
+  
+  .example-button-row .mat-mdc-button-base {
+    margin: 8px 8px 8px 0;
+  }
+  
+  .example-flex-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  
+  .example-button-container {
+    display: flex;
+    justify-content: center;
+    width: 120px;
+  }
+  .mat-mdc-button-touch-target{
+    background-color: rgb(249,169,15);
+  }
+  button{
+    background-color: rgb(249,169,15);
+
+  }
