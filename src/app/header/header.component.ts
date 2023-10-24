@@ -9,11 +9,12 @@ import { AuthService } from '../services/auth.service';
 })
 
 
-export class HeaderComponent implements OnInit {
+export class HeaderComponent implements OnInit  {
 
-public initial :string | undefined
-public nom :string | undefined
-public prenom :string | undefined
+  public initial :string | undefined
+  public nom :string | undefined
+  public prenom :string | undefined
+
   constructor(private routes : ActivatedRoute,
               private router : Router,
               private authService : AuthService){}
@@ -27,11 +28,11 @@ public prenom :string | undefined
   goToCreate(){
     this.router.navigateByUrl('/create')
   }
+  goToHome(){
+    this.router.navigateByUrl('/home')
+  }
   logout(){
     this.authService.logout()
     this.router.navigateByUrl('')
   }
-
-  
-
 }

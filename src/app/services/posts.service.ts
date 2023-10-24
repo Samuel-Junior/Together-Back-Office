@@ -11,7 +11,6 @@ import { Post } from "../models/post.model";
   export class PostService {
 
     private BACK_URL = 'http://localhost:3000';
-    
     constructor(private http : HttpClient) { }
 
     getPosts():Observable<any>{

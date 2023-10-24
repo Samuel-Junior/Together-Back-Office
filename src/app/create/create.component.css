@@ -9,6 +9,9 @@ form {
     display: flex;
     flex-direction: column;
 }
+form button{
+    margin-top: 1rem;
+}
 
 input, textarea{
     width: 100%;

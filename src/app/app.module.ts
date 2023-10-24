@@ -66,7 +66,7 @@ import { AuthInterceptor } from './interceptors/auth.interceptor';
     { provide: LOCALE_ID, useValue: 'fr-FR'},
     { provide: HTTP_INTERCEPTORS,
       useClass: AuthInterceptor,
-      multi : true}
+      multi : true},
   ],
   bootstrap: [AppComponent]
 })

@@ -1,9 +1,7 @@
 import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { PostService } from '../services/posts.service';
 import { ActivatedRoute, Router } from '@angular/router';
-import { takeUntil } from 'rxjs';
 import { MatDialog } from '@angular/material/dialog';
-import { DialogComponent } from '../dialog/dialog.component';
 import { Post } from '../models/post.model';
 import { User } from '../models/user';
 import { AuthService } from '../services/auth.service';
@@ -15,15 +13,16 @@ import { ThemePalette } from '@angular/material/core';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
+
 export class HomeComponent implements OnInit {
  colorControl = new FormControl('primary' as ThemePalette);
  postTab: any[] = []
  seeMyPost = false
- public post!: Post
- public user!: User
- libelle = 'voir mes posts'
+ libelle = 'Voir mes posts'
  button = "Like"
  currentUser : User | undefined 
+ public post!: Post
+ public user!: User
  public initial :string | undefined
  public nom :string | undefined
  public prenom :string | undefined
@@ -33,29 +32,24 @@ export class HomeComponent implements OnInit {
               private route : ActivatedRoute,
               public dialog: MatDialog, 
               public cd:ChangeDetectorRef,
-              public authService : AuthService,
-              
-             
-               ){
-    
-  }
+              public authService : AuthService,){}
+
     ngOnInit(): void {
-      
       this.currentUser =  this.authService.currentUser
       this.prenom = this.authService.currentUser?.prenom?.substring(0,1)
       this.nom = this.authService.currentUser?.nom?.substring(0,1);
       this.initial =`${this.prenom}${this.nom}`
-
       this.postService.getPosts().subscribe(
         (res: any)=>{
           this.postTab = res.response as [];
+          this.postTab.reverse()
           console.log(res);
         },
         (err)=>{
           alert("erreur")
-        }
-      )
+        })
     }
+
     goToEdit(id: any): void{
       this.router.navigateByUrl( `/edit/${id}`)
     }
@@ -65,8 +59,6 @@ export class HomeComponent implements OnInit {
       .subscribe(()=>{
         this.cd.markForCheck()
         this.postTab = this.postTab.filter(el => el._id !== id)
-        // this.postTab = []
-        // this.router.navigateByUrl("/home")
       })
     }
 
@@ -93,7 +85,7 @@ export class HomeComponent implements OnInit {
     }
 
     goToCreate(){
-      this.router.navigateByUrl('/home')
+      this.router.navigateByUrl('/create')
     }
     
     displayBtn(post:Post){
@@ -115,7 +107,6 @@ export class HomeComponent implements OnInit {
         },
         (err) => {
           console.log(err)
-        }
-      )
+        })
     }
 }

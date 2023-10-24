@@ -1,8 +1,16 @@
-<body class="global">
+<body>
+<div class="global">
+<div class="left">
+
     <div class="logo">
-        <img src="assets/images/logo-together.png" alt="logo-together" width="400px" height="300px">
+       <img src="assets/images/logo-together.png" alt="" height="170%" width="110%" >
     </div>
-    <h4>Votre réseau d'entreprise, mais pas trop ;)</h4>
+    <div>
+        <h4>Votre réseau d'entreprise, mais pas trop ;)</h4>
+    </div>
+    
+</div>
+<div class="rigth">
 
     <div class="form">
         <form [formGroup]="loginForm">
@@ -20,9 +28,10 @@
             </mat-form-field>
             <div class="example-label"></div>
             <div class="btnValide">
-              <button (click)="goToHome()" [disabled]="loginForm.invalid" mat-raised-button color="primary">Se connecter</button>
+                <button (click)="goToHome()" [disabled]="loginForm.invalid" mat-raised-button color="primary">Se connecter</button>
             </div>
-          
         </form>
     </div>
+</div>
+</div>
 </body>

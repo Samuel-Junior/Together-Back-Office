@@ -18,17 +18,24 @@ div.logo img{
     width: 300px;
 }
 
+
+
 .initial{
  
   padding: 0%;
   border-radius: 55%;
-  width: 4%;
+  max-width: 50px;
+  min-width: 50px;
+  max-height: 50px;
+  min-height: 50px;
   display: flex;
   align-items: center;
   justify-content: center;
+  background: white;
 }
 .initial h2{
   font-size: medium;
+  color: #3f51b5;
 }
 
 section {
@@ -38,7 +45,7 @@ section {
   .example-label {
     display: table-cell;
     font-size: 14px;
-    margin-left: 8px;
+    margin-left: 4rem;
     min-width: 120px;
     width: 100%;
     display: flex;
@@ -76,3 +83,35 @@ section {
     background-color: rgb(249,169,15);
 
   }
+
+/********  Media queries  ************************/
+
+  @media screen and (max-width: 750px) {
+
+    .global{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    div .logo {
+      margin-left:0 ;
+    }
+
+    div .example-label {
+      justify-content: center;
+
+    }
+    div .left{
+      display: flex;
+      justify-content: flex-end;
+      width: 31%;
+    }
+    div .initial{
+      margin-bottom: 10px;
+    }
+    .btns  div .new{
+      /* display: none; */
+    }
+    
+}
+

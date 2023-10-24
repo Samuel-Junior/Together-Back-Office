@@ -1,17 +1,38 @@
 html body{
     height: 100%;
+    
 }
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
 .global{
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 7rem;
+    gap: 2rem;
+ 
    
 }
-.logo img{
-    position: absolute;
-    left: 15rem;
-    top: 12rem;
+.left{
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    flex-direction: column;
+    width: 50%;
+}
+.rigth{
+    width: 50%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+.logo{
+   height: 8rem;
+   width: 100%;
 }
 h4{
     color: rgb(80,109,189);
@@ -25,7 +46,7 @@ h4{
     max-width: 500px;
     width: 100%;
     background-color: rgb(80,109,189) ;
-    padding: 25px;
+    padding: 5rem;
     border-radius: 15px;
 }
   
@@ -36,4 +57,20 @@ h4{
 .btnValide{
     display: flex;
     justify-content: center;
+}
+
+
+/* ***********    Media Querries ************* */
+
+@media screen and (max-width: 750px) {
+
+    .global{
+        flex-direction: column;
+        gap: 0;
+        margin-bottom: 150px;
+    }
+    div .left{
+        width: 75%;
+    }
+    
 }

@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { PostService } from '../services/posts.service';
-import { Observable, map } from 'rxjs';
+import { Observable } from 'rxjs';
 import { Post } from '../models/post.model';
 
 @Component({
@@ -15,19 +15,16 @@ export class CreateComponent implements OnInit {
   createPostForm! : FormGroup
   createPostPreview$!: Observable<PostService>;
 
+  constructor( private formBuilder: FormBuilder,
+               private router : Router, 
+               public postService:PostService ){}
 
-  constructor(private formBuilder: FormBuilder,
-    private router : Router, public postService:PostService ){ }
   ngOnInit(): void {
     this.createPostForm= this.formBuilder.group({
       description: [null, Validators.required],
       imageUrl: [null, [Validators.required,]],
 
-    },{
-      // updateOn: "blur"
     });
-    
-    
   }
 
   submitPost(post : Post){
@@ -39,20 +36,3 @@ export class CreateComponent implements OnInit {
   }
   }
 }
-// if(this.editPostForm.valid){
-//   const newPost = {...this.post, ...this.editPostForm.value}
-//   this.postService.edit(id, newPost).subscribe(()=>{
-//     this.router.navigateByUrl('/home')
-//   })
-// }
-
-
-// this.postService.createPost(post).subscribe(
-    //   (res)=>{
-    //     console.log(res);
-    //     this.router.navigateByUrl("/home")
-    //   },
-    //   (e)=>{
-    //     console.log(e);
-    //   }
-    // )

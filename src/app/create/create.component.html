@@ -1,6 +1,8 @@
 <app-header></app-header>
 <div class="form-card">
-    <h2>NOUVEAU POST</h2>
+    <div>
+        <h2>NOUVEAU POST</h2>
+    </div>
     <form [formGroup]="createPostForm">
         <div class="form-group">
             <label for="description">Description</label>
@@ -10,14 +12,9 @@
             <label for="imageUrl">ajouter l'URL de l'image</label>
             <input type="text" id="imageUrl" formControlName="imageUrl">
         </div>
-        <button mat-button color="primary" (click)="submitPost(createPostForm.value)"[disabled]="createPostForm.invalid" type="submit" >Poster</button>
+        <div>
+            <button mat-raised-button color="primary" (click)="submitPost(createPostForm.value)"[disabled]="createPostForm.invalid" type="submit" >Poster</button>
+        </div>
     </form>
 </div>
 
-<!-- <div class="" *ngIf="createPostForm | async as post">
-    <ng-container *ngIf="post.imageUrl">
-        <img [src]="post.imageUrl" [alt]="post.description">
-    </ng-container>
-    <p>{{ post.description}}</p>
-    <p>Mise en ligne {{ faceSnap.createdDate | date  }}</p>
-</div> -->
