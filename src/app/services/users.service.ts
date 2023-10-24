@@ -6,7 +6,6 @@ import { Injectable } from "@angular/core";
     providedIn: 'root'
   })
   export class UsersService {
-    
-    private BACK_URL = 'http://localhost:3000';
+    private BACK_URL = 'https://together-back.vercel.app';
     constructor(private http : HttpClient) { }
   }
