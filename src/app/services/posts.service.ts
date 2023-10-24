@@ -10,12 +10,14 @@ import { Post } from "../models/post.model";
 
   export class PostService {
 
-    private BACK_URL = 'http://localhost:3000';
+    private BACK_URL = 'https://together-back.vercel.app';
     constructor(private http : HttpClient) { }
+    
 
     getPosts():Observable<any>{
         return this.http.get(this.BACK_URL+'/api/post') as Observable<any>
       }
+      
     createPost(post: Post):Observable<Post>{
       return this.http.post(this.BACK_URL+'/api/post', post) as Observable<Post>
     }
