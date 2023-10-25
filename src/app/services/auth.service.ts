@@ -8,7 +8,7 @@ import { HttpClient } from "@angular/common/http";
   })
   export class AuthService {
 
-    private BACK_URL = 'http://localhost:3000'
+    private BACK_URL = 'https://together-back.vercel.app'
     public currentUser?: User
 
     constructor(private http : HttpClient){}
