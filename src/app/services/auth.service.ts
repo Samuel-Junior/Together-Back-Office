@@ -1,14 +1,15 @@
 import { Injectable } from "@angular/core";
 import { User } from "../models/user";
-import { map } from "rxjs";
+import { map, of, timer } from "rxjs";
 import { HttpClient } from "@angular/common/http";
+import { environment } from '@env/environment';
 
 @Injectable({
     providedIn: 'root'
   })
   export class AuthService {
 
-    private BACK_URL = 'https://together-back.vercel.app'
+    private BACK_URL = environment.apiUrl
     public currentUser?: User
 
     constructor(private http : HttpClient){}
@@ -32,7 +33,6 @@ import { HttpClient } from "@angular/common/http";
         })
       )
    }
-
    getToken(){
     return localStorage.getItem("accessToken")
    }

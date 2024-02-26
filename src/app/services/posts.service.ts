@@ -2,6 +2,7 @@ import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Observable } from "rxjs";
 import { Post } from "../models/post.model";
+import { environment } from '@env/environment'
 
 
 @Injectable({
@@ -10,7 +11,7 @@ import { Post } from "../models/post.model";
 
   export class PostService {
 
-    private BACK_URL = 'https://together-back.vercel.app';
+    private BACK_URL = environment.apiUrl;
     constructor(private http : HttpClient) { }
     
 

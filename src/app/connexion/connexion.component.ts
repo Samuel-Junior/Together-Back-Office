@@ -29,10 +29,11 @@ export class ConnexionComponent implements OnInit{
 
   ngOnInit(): void {
     this.loginForm = this.formBuilder.group({
-      username: ["johnsmith@social.com", [Validators.required,Validators.email]],
-      password: ["jsmith",[ Validators.required,Validators.minLength(2),]]
+      mail: ["johnsmith@social.com", [Validators.required,Validators.email]],
+      mdp: ["jsmith",[ Validators.required,Validators.minLength(2),]], 
   })
   }
+  
   goToHome(): void{
     this.authService.login(this.loginForm.value).subscribe(
       (res:any)=>{
@@ -43,9 +44,7 @@ export class ConnexionComponent implements OnInit{
           this.dialog.open(DialogComponent);
           this.loginForm.reset()
         }
-        
       }
     )
   }
-  
 }
