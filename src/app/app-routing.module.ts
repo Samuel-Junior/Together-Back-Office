@@ -5,10 +5,12 @@ import { HomeComponent } from './home/home.component';
 import { CreateComponent } from './create/create.component';
 import { EditComponent } from './edit/edit.component';
 import { AuthGuard } from './guard/posts.guard';
+import { CreationComponent } from './creation/creation.component';
 
 
 const routes: Routes = [
   {path:"", component:ConnexionComponent},
+  {path:"creation", component:CreationComponent},
   {path:"home", component: HomeComponent,canActivate:[AuthGuard]},
   {path:"create", component: CreateComponent},
   {path:"edit", component: EditComponent},

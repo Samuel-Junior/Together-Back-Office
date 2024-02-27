@@ -25,6 +25,8 @@ import {MatSelectModule} from '@angular/material/select'
 import { registerLocaleData } from '@angular/common';
 import * as fr from '@angular/common/locales/fr';
 import { AuthInterceptor } from './interceptors/auth.interceptor';
+import { CreationComponent } from './creation/creation.component';
+import { DialogvalidateComponent } from './dialogvalidate/dialogvalidate.component';
 
 
 
@@ -38,7 +40,9 @@ import { AuthInterceptor } from './interceptors/auth.interceptor';
     HeaderComponent,
     CreateComponent,
     DialogComponent,
-    EditComponent
+    EditComponent,
+    CreationComponent,
+    DialogvalidateComponent
   ],
   imports: [
     BrowserModule,

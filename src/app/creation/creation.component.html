@@ -1,0 +1,57 @@
+<body>
+    <div class="global">
+    <div class="left">
+    
+        <div class="logo">
+           <img src="assets/images/logo-together.png" alt="" height="170%" width="110%" >
+        </div>
+        <div>
+            <h4>Ajouter ici vos nouveaux collaborateurs</h4>
+        </div>
+        
+    </div>
+    <div class="rigth">
+    
+        <div class="form">
+            <form [formGroup]="loginForm">
+                <mat-form-field class="example-full-width">
+                    <mat-label>Rôle</mat-label>
+                    <input matInput placeholder="utilisateur" formControlName="role">
+                </mat-form-field>
+                <br>
+                <mat-form-field class="example-full-width">
+                    <mat-label>Nom de famille</mat-label>
+                    <input matInput placeholder="Dupon" formControlName="nom">
+                </mat-form-field>
+                <br>
+                <mat-form-field class="example-full-width">
+                    <mat-label>Prénom</mat-label>
+                    <input matInput placeholder="Jean" formControlName="prenom">
+                </mat-form-field>
+                <br>
+                <mat-form-field class="example-full-width">
+                    <mat-label>Département</mat-label>
+                    <input matInput placeholder="média" formControlName="departement">
+                </mat-form-field>
+                <br>
+                <mat-form-field class="example-full-width">
+                    <mat-label>Email</mat-label>
+                    <input matInput placeholder="labelle@gmail.com" formControlName="mail">
+                </mat-form-field>
+                <br>
+                <mat-form-field>
+                    <mat-label>Mot de passe </mat-label>
+                    <input matInput [type]="hide ? 'password' : 'text'" formControlName="mdp">
+                    <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                    </button>
+                </mat-form-field>
+                <div class="example-label"></div>
+                <div class="btnValide">
+                    <button (click)="CreatedUser()" [disabled]="loginForm.invalid" mat-raised-button color="primary">Créer un nouveau partenaire</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    </div>
+    </body>

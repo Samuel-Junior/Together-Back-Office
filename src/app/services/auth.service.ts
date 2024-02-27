@@ -23,6 +23,7 @@ import { environment } from '@env/environment';
     isAuthenticated(): boolean {
       return !!this.getToken()
     }
+    //       return this.http.post("https://together-back.vercel.app/api/user/authenticate",user).pipe(
 
     login(user: any) {
       return this.http.post(this.BACK_URL+'/api/user/authenticate',user).pipe(
@@ -33,6 +34,10 @@ import { environment } from '@env/environment';
         })
       )
    }
+   createUser(user: any){
+    return this.http.post(this.BACK_URL+'/api/user/',user)
+   }
+
    getToken(){
     return localStorage.getItem("accessToken")
    }

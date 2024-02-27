@@ -29,11 +29,24 @@ export class ConnexionComponent implements OnInit{
 
   ngOnInit(): void {
     this.loginForm = this.formBuilder.group({
-      mail: ["johnsmith@social.com", [Validators.required,Validators.email]],
-      mdp: ["jsmith",[ Validators.required,Validators.minLength(2),]], 
+      mail: ["lmarc@social.com", [Validators.required,Validators.email]],
+      mdp: ["lmarc",[ Validators.required,Validators.minLength(2),]], 
   })
   }
   
+  goToCreation(): void{
+    this.authService.login(this.loginForm.value).subscribe(
+      (res:any)=>{
+        if(res.user){
+        this.authService.currentUser = res.user 
+        this.router.navigateByUrl('/creation')
+        } else{
+          this.dialog.open(DialogComponent);
+          this.loginForm.reset()
+        }
+      }
+    )
+  }
   goToHome(): void{
     this.authService.login(this.loginForm.value).subscribe(
       (res:any)=>{

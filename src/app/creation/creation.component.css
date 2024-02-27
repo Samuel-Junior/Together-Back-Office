@@ -14,6 +14,8 @@ body{
     justify-content: center;
     align-items: center;
     gap: 2rem;
+ 
+   
 }
 .left{
     display: flex;
@@ -35,10 +37,6 @@ body{
 h4{
     color: rgb(80,109,189);
 }
-h5{
-    color: rgb(254, 254, 254);
-    font-weight: bold;
-}
 
 .form {
     display: flex;
@@ -51,24 +49,6 @@ h5{
     padding: 5rem;
     border-radius: 15px;
 }
-.form .btnValide button {
-    background-color: rgb(219, 124, 55) ;
-}
-.forme {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-width: 150px;
-    max-width: 500px;
-    width: 100%;
-    background-color: rgb(219, 124, 55) ;
-    padding: 5rem;
-    border-radius: 15px;
-}
-.forme .btnValide button {
-    background-color: rgb(80,109,189) ;
-}
-  
   
 .example-full-width {
     width: 100%;
@@ -87,16 +67,10 @@ h5{
     .global{
         flex-direction: column;
         gap: 0;
-        margin-bottom: 100px;
+        margin-bottom: 150px;
     }
-    
     div .left{
         width: 75%;
     }
-    div .rigth{
-        margin: 2px;
-    }
-
-
     
 }
