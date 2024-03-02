@@ -83,7 +83,10 @@ h5{
 /* ***********    Media Querries ************* */
 
 @media screen and (max-width: 750px) {
-
+    body{
+        height: unset ;
+            
+    }
     .global{
         flex-direction: column;
         gap: 0;
@@ -97,6 +100,6 @@ h5{
         margin: 2px;
     }
 
-
+    
     
 }
