@@ -14,7 +14,7 @@ import { environment } from '@env/environment'
     private BACK_URL = environment.apiUrl;
     constructor(private http : HttpClient) { }
     
-
+// API fonctions 
     getPosts():Observable<any>{
         return this.http.get(this.BACK_URL+'/api/post') as Observable<any>
       }

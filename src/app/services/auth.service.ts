@@ -7,6 +7,8 @@ import { environment } from '@env/environment';
 @Injectable({
     providedIn: 'root'
   })
+
+  // Fonction about my authentification.
   export class AuthService {
 
     private BACK_URL = environment.apiUrl
@@ -23,7 +25,6 @@ import { environment } from '@env/environment';
     isAuthenticated(): boolean {
       return !!this.getToken()
     }
-    //       return this.http.post("https://together-back.vercel.app/api/user/authenticate",user).pipe(
 
     login(user: any) {
       return this.http.post(this.BACK_URL+'/api/user/authenticate',user).pipe(

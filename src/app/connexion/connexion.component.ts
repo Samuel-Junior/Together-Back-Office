@@ -29,8 +29,8 @@ export class ConnexionComponent implements OnInit{
 
   ngOnInit(): void {
     this.loginForm = this.formBuilder.group({
-      mail: ["lmarc@social.com", [Validators.required,Validators.email]],
-      mdp: ["lmarc",[ Validators.required,Validators.minLength(2),]], 
+      mail: ["", [Validators.required,Validators.email]],
+      mdp: ["",[ Validators.required,Validators.minLength(2),]], 
   })
   }
   
